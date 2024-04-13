@@ -9,7 +9,7 @@ class Companies(db.Model):
     price = db.Column(db.Integer, nullable=False)
     origin = db.Column(db.String(50), nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
-    user = db.relationship('User', backref='companies')
+    # user = db.relationship('User', backref='companies')
     created_at = db.Column(db.DateTime, default=datetime.now)
     updated_at = db.Column(db.DateTime, onupdate=datetime.now)
 
@@ -22,3 +22,5 @@ class Companies(db.Model):
 
     def __repr__(self):
         return f'{self.name} {self.origin}'
+
+
